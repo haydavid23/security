@@ -14,12 +14,14 @@ export const ANONYMOUS_USER: User = {
 
 const AUTH_CONFIG = {
     clientID: 'bE8aGhCvMiKCccyaWPVjSVj2VyLgopGq',
-    domain: "dev-e9docc0i.us.auth0.com"
+    domain: 'dev-e9docc0i.us.auth0.com'
 };
 
 
 @Injectable()
 export class AuthService {
+
+    
 
     auth0 = new auth0.WebAuth({
         clientID: AUTH_CONFIG.clientID,
@@ -27,7 +29,6 @@ export class AuthService {
         responseType: 'token id_token',
         redirectUri: 'https://localhost:4200/lessons'
     });
-
     private userSubject = new BehaviorSubject<User>(undefined);
 
     user$: Observable<User> = this.userSubject.asObservable().pipe(filter(user => !!user));
@@ -37,7 +38,7 @@ export class AuthService {
     }
 
     login() {
-
+        this.auth0.authorize({mode: 'login'})
     }
 
     signUp() {
