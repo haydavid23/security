@@ -13,8 +13,8 @@ export const ANONYMOUS_USER: User = {
 };
 
 const AUTH_CONFIG = {
-    clientID: 'hHhF4PWGY7vxLQH2HatJaUOertB1dDrU',
-    domain: "angularsecuritycourse.auth0.com"
+    clientID: 'bE8aGhCvMiKCccyaWPVjSVj2VyLgopGq',
+    domain: "dev-e9docc0i.us.auth0.com"
 };
 
 
