@@ -12,6 +12,7 @@ import {login} from "./login.route";
 import {retrieveUserIdFromRequest} from "./get-user.middleware";
 import {checkIfAuthenticated} from "./authentication.middleware";
 import {checkCsrfToken} from "./csrf.middleware";
+import { checkIfAuthorized } from './authorization.middleware';
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -34,7 +35,7 @@ const options = commandLineArgs(optionDefinitions);
 
 // REST API
 app.route('/api/lessons')
-    .get(checkIfAuthenticated, readAllLessons);
+    .get(checkIfAuthenticated, checkIfAuthorized, readAllLessons);
 
 app.route('/api/signup')
     .post(createUser);
