@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "./services/auth.service";
 import { AdminComponent } from './admin/admin.component';
 import { RouterModule} from "@angular/router";
+import { RbacAllowDirective } from './common/rbac-allow.directive';
 
 
 
@@ -33,7 +34,8 @@ import { RouterModule} from "@angular/router";
     LessonsComponent,
     LoginComponent,
     SignupComponent,
-    AdminComponent
+    AdminComponent,
+    RbacAllowDirective
   ],
   imports: [
     BrowserModule,

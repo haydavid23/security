@@ -15,6 +15,7 @@ export function checkCsrfToken(req: Request,  res: Response,  next: NextFunction
         next();
     }
     else {
+        console.log("crsf token")
         res.sendStatus(403);
     }
 
